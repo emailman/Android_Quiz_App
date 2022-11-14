@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Quiz App</string>
+    <string name="quiz_app">Quiz App</string>
+    <string name="welcome">Welcome</string>
+    <string name="enter_your_name_below">Enter Your Name Below</string>
+    <string name="enter_name_here">Enter Name Here</string>
+    <string name="start">Start</string>
+    <string name="quiz_image">Quiz Image</string>
+    <string name="apple">Apple</string>
+    <string name="submit">SUBMIT</string>
+    <string name="finish">FINISH</string>
+    <string name="go_to_next_question">GO TO NEXT QUESTION</string>
+    <string name="result">Result</string>
+    <string name="image">image</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="username">Username</string>
+    <string name="score">Your score is %d out of %d</string>
+    <string name="x_of_y">"%d/%d</string>
+</resources>
