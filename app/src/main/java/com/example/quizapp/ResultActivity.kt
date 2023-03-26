@@ -18,10 +18,13 @@ class ResultActivity : AppCompatActivity() {
         // Get the values to be shown in this activity from
         // the prior activity
         tvName.text = intent.getStringExtra(Constants.USER_NAME)
-        val totalQuestions = intent.getIntExtra(Constants.TOTAL_QUESTIONS, 0)
-        val correctAnswers = intent.getIntExtra(Constants.CORRECT_ANSWERS, 0)
+        val totalQuestions =
+            intent.getIntExtra(Constants.TOTAL_QUESTIONS, 0)
+        val correctAnswers =
+            intent.getIntExtra(Constants.CORRECT_ANSWERS, 0)
 
-        tvScore.text = getString(R.string.score, correctAnswers, totalQuestions)
+        tvScore.text =
+            getString(R.string.score, correctAnswers, totalQuestions)
 
         // Return to the main activity
         btnFinish.setOnClickListener {

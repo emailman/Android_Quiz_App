@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/quiz_app"
-        android:textSize="25sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         android:layout_marginBottom="30dp"
         android:gravity="center"
@@ -40,16 +40,6 @@
                 android:text="@string/welcome"
                 android:textColor="#363A43"
                 android:textSize="30sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:gravity="center"
-                android:text="@string/enter_your_name_below"
-                android:textColor="#546E7A"
-                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout

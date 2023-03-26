@@ -60,10 +60,11 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         val question = questionsList[currentPosition - 1]
         ivImage.setImageResource(question.image)
         progressBar.progress = currentPosition
-        tvProgress.text = getString(R.string.x_of_y, currentPosition, progressBar.max)
+        tvProgress.text =
+            getString(R.string.x_of_y, currentPosition, progressBar.max)
         tvQuestion.text = question.question
         tvOptionOne.text = question.option1
-        tvOptionTwo.text = question.option3
+        tvOptionTwo.text = question.option2
         tvOptionThree.text = question.option3
         tvOptionFour.text = question.option4
 
@@ -89,7 +90,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private fun selectedOptionsView(tv: TextView, selectedOptionNum: Int) {
+    private fun selectedOptionView(tv: TextView, selectedOptionNum: Int) {
         defaultOptionsView()
 
         // Set the selected option color, typeface, border
@@ -103,13 +104,13 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(view: View) {
         when (view.id) {
             R.id.tv_option_one ->
-                selectedOptionsView(tvOptionOne, 1)
+                selectedOptionView(tvOptionOne, 1)
             R.id.tv_option_two ->
-                selectedOptionsView(tvOptionTwo, 2)
+                selectedOptionView(tvOptionTwo, 2)
             R.id.tv_option_three ->
-                selectedOptionsView(tvOptionThree, 3)
+                selectedOptionView(tvOptionThree, 3)
             R.id.tv_option_four ->
-                selectedOptionsView(tvOptionFour, 4)
+                selectedOptionView(tvOptionFour, 4)
             R.id.btn_submit -> {
                 if (selectedOptionPosition == 0) {
                     currentPosition++
@@ -119,10 +120,14 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                             setQuestion()
                         }
                         else -> {
-                            val intent = Intent(this, ResultActivity::class.java)
-                            intent.putExtra(Constants.USER_NAME, userName)
-                            intent.putExtra(Constants.CORRECT_ANSWERS, correctAnswers)
-                            intent.putExtra(Constants.TOTAL_QUESTIONS, questionsList.size)
+                            val intent =
+                                Intent(this, ResultActivity::class.java)
+                            intent.putExtra(Constants.USER_NAME,
+                                userName)
+                            intent.putExtra(Constants.CORRECT_ANSWERS,
+                                correctAnswers)
+                            intent.putExtra(Constants.TOTAL_QUESTIONS,
+                                questionsList.size)
                             startActivity(intent)
                             finish()
                         }
@@ -130,16 +135,19 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                 } else {
                     val question = questionsList[currentPosition - 1]
                     if (question.correctAnswer != selectedOptionPosition) {
-                        answerView(selectedOptionPosition, R.drawable.wrong_option_border_bg)
+                        answerView(selectedOptionPosition,
+                            R.drawable.wrong_option_border_bg)
                     } else {
                         correctAnswers++
                     }
-                    answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
+                    answerView(question.correctAnswer,
+                        R.drawable.correct_option_border_bg)
 
                     if (currentPosition == questionsList.size) {
                         btnSubmit.text = getString((R.string.finish))
                     } else {
-                        btnSubmit.text = getString(R.string.go_to_next_question)
+                        btnSubmit.text =
+                            getString(R.string.go_to_next_question)
                     }
 
                     selectedOptionPosition = 0

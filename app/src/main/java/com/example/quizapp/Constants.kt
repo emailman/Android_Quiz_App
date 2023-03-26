@@ -8,7 +8,8 @@ object Constants {
     fun getQuestions(): ArrayList<Question> {
         val questionsList = ArrayList<Question>()
         val question1 = Question(
-            1, "What country's flag is this?",
+            1,
+            "What country's flag is this?",
             R.drawable.ic_flag_of_argentina,
             "Argentina",
             "Australia",
@@ -19,7 +20,8 @@ object Constants {
         questionsList.add(question1)
 
         val question2 = Question(
-            1, "What country's flag is this?",
+            2,
+            "What country's flag is this?",
             R.drawable.ic_flag_of_belgium,
             "Belgium",
             "Brazil",
@@ -30,7 +32,8 @@ object Constants {
         questionsList.add(question2)
 
         val question3 = Question(
-            1, "What country's flag is this?",
+            3,
+            "What country's flag is this?",
             R.drawable.ic_flag_of_india,
             "India",
             "Italy",
@@ -39,7 +42,6 @@ object Constants {
             1
         )
         questionsList.add(question3)
-
 
         return questionsList
     }
